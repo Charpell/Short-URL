@@ -1,6 +1,6 @@
 import express from 'express';
-import mongoose from 'mongoose';
-import bodyParser from 'body-parser';
+import { dbConfig, middlewaresConfig } from './config';
+
 import { urlRoute } from './modules';
 
 const app = express();
@@ -10,18 +10,13 @@ const PORT = process.env.PORT || 4000;
 /*
 * DATABASE
 */
-mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/shorturltuto');
-mongoose.connection
-  .once('open', () => console.log('MONGODB connected'))
-  .on('error', err => console.error(err));
+'mongodb://localhost/shorturltuto'
 
 /**
  * MIDDLEWARES
  */
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false })); // Postman
+middlewaresConfig(app);
 
 app.get('/', (req, res) => {
   res.send('Hello');
