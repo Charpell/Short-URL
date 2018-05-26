@@ -5,14 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js",
-    "clean": "rimraf dist"
+    "dev": "cross-env NODE_ENV=developemnt nodemon index.js",
+    "clean": "rimraf dist",
+    "build": "cross-env NODE_ENV=production npm run clean && webpack -p"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "cross-env": "^5.1.6",
     "express": "^4.16.3",
     "mongoose": "^5.1.2",
     "react": "^16.4.0",
