@@ -1,4 +1,7 @@
 {
+  "env": {
+    "browser": true
+  },
   "extends": "rallycoding",
   "rules": {
     "import/no-extraneous-dependencies": 0
