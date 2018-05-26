@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "clean": "rimraf dist"
   },
   "keywords": [],
   "author": "",
@@ -32,6 +33,7 @@
     "extract-text-webpack-plugin": "^2.0.0-beta.5",
     "html-webpack-plugin": "^3.2.0",
     "nodemon": "^1.17.5",
+    "rimraf": "^2.6.2",
     "webpack": "^2.2.1",
     "webpack-dev-middleware": "^1.9.0"
   }
